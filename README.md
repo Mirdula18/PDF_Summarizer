@@ -46,6 +46,3 @@ A Python application that extracts text from PDF files and generates concise sum
 
 Feel free to submit issues and enhancement requests.
 
-## License
-
-This project is open source. Please check the license file for more details.
