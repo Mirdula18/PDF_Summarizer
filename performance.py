@@ -1,7 +1,3 @@
-"""
-Performance monitoring utilities for PDF Summarizer
-"""
-
 import time
 import streamlit as st
 from typing import Dict, Any

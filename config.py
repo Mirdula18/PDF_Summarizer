@@ -5,10 +5,10 @@ MIN_SUMMARY_LENGTH = 50
 MAX_SUMMARY_LENGTH = 200
 
 # PDF Processing Configuration
-MAX_FILE_SIZE_MB = 10
+MAX_FILE_SIZE_MB = 10  # Maximum file size for upload
 SUPPORTED_FORMATS = ['.pdf']
 
-# Streamlit Configuration
+# Model Configuration
 PAGE_TITLE = "PDF Summarizer"
 PAGE_ICON = "📄"
 LAYOUT = "wide"

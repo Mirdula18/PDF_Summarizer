@@ -1,6 +1,3 @@
-"""
-Helper functions for the PDF Summarizer
-"""
 from typing import Dict, Any
 import streamlit as st
 from streamlit.runtime.uploaded_file_manager import UploadedFile
@@ -10,9 +7,6 @@ import time
 from config import *
 
 def validate_file(uploaded_file: UploadedFile) -> Dict[str, Union[bool, str, float]]:
-    """
-    Validate uploaded file
-    """
     if not uploaded_file:
         return {"valid": False, "error": "No file uploaded"}
     
@@ -35,9 +29,6 @@ def validate_file(uploaded_file: UploadedFile) -> Dict[str, Union[bool, str, flo
     return {"valid": True, "size_mb": round(file_size_mb, 2)}
 
 def display_text_stats(stats: Dict[str, int]):
-    """
-    Display text statistics in a nice format
-    """
     if not stats:
         return
     
@@ -56,11 +47,8 @@ def display_text_stats(stats: Dict[str, int]):
         st.metric("Est. Pages", stats.get('pages_estimated', 0))
 
 def display_summary_results(result: Dict[str, Any]):
-    """
-    Display summarization results with performance metrics
-    """
     if not result.get('success', False):
-        st.error(f"❌ {result.get('error', 'Unknown error')}")
+        st.error(f"{result.get('error', 'Unknown error')}")
         return
     
     # Display metrics
@@ -80,10 +68,10 @@ def display_summary_results(result: Dict[str, Any]):
     
     # Display performance metrics if available
     if 'total_time' in result:
-        st.info(f"⚡ **Processing completed in {result['total_time']:.2f} seconds**")
+        st.info(f"**Processing completed in {result['total_time']:.2f} seconds**")
     
     # Display summary
-    st.subheader("📝 Summary")
+    st.subheader("Summary")
     st.write(result['summary'])
     
     # Download option
@@ -96,9 +84,6 @@ def display_summary_results(result: Dict[str, Any]):
 
 def create_summary_report(original_text: str, result: Dict[str, Any], 
                          filename: str) -> str:
-    """
-    Create a detailed summary report
-    """
     if not result.get('success'):
         return ""
     
@@ -123,10 +108,7 @@ def create_summary_report(original_text: str, result: Dict[str, Any],
     return report
 
 def display_model_info():
-    """
-    Display information about the model being used
-    """
-    with st.expander("ℹ️ About the AI Model"):
+    with st.expander("About the AI Model"):
         st.markdown("""
         **Model:** `sshleifer/distilbart-cnn-12-6`
         
@@ -138,9 +120,6 @@ def display_model_info():
         """)
 
 def setup_page_config():
-    """
-    Set up Streamlit page configuration
-    """
     st.set_page_config(
         page_title=PAGE_TITLE,
         page_icon=PAGE_ICON,

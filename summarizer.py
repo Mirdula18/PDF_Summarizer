@@ -1,7 +1,3 @@
-"""
-AI summarization logic using distilbart-cnn-12-6
-"""
-
 import streamlit as st
 import torch
 from transformers import pipeline, AutoTokenizer, AutoModelForSeq2SeqLM
