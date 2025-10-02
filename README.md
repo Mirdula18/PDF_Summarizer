@@ -19,7 +19,7 @@ A Python application that extracts text from PDF files and generates concise sum
 1. Clone or download this repository
 2. Navigate to the project directory:
     ```bash
-    cd PDF_Summarizer-main
+    cd PDF_Summarizer
     ```
 3. Install required dependencies:
     ```bash
@@ -45,7 +45,3 @@ A Python application that extracts text from PDF files and generates concise sum
 ## Contributing
 
 Feel free to submit issues and enhancement requests.
-
-## License
-
-This project is open source. Please check the license file for more details.
