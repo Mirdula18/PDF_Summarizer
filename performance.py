@@ -62,7 +62,7 @@ class PerformanceMonitor:
         if not self.metrics:
             return
         
-        st.subheader("⚡Performance Metrics")
+        st.subheader("Performance Metrics")
         
         cols = st.columns(len(self.metrics))
         for i, (name, data) in enumerate(self.metrics.items()):

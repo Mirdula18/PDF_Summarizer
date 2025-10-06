@@ -5,6 +5,7 @@ from typing import List, Dict, Any, Optional, Union
 from config import *
 from performance import Timer, PerformanceMonitor, time_operation
 import time
+import re
 
 class PDFSummarizer:
     def __init__(self):
@@ -86,7 +87,7 @@ class PDFSummarizer:
             return []
         
         # More efficient sentence splitting using multiple delimiters
-        import re
+        
         sentences = re.split(r'[.!?]+\s+', text.strip())
         sentences = [s.strip() for s in sentences if len(s.strip()) > 10]
         
@@ -174,7 +175,7 @@ class PDFSummarizer:
             return summary[0]['summary_text'].strip() if summary and len(summary) > 0 else ""
             
         except Exception as e:
-            st.warning(f"⚠️ Error summarizing chunk: {str(e)}")
+            st.warning(f" Error summarizing chunk: {str(e)}")
             return ""
     
     def summarize_chunks_batch(self, chunks: List[str], min_length: int = None, 

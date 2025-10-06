@@ -126,4 +126,3 @@ def setup_page_config():
         layout=LAYOUT,
         initial_sidebar_state="collapsed"
     )
-from typing import Any
